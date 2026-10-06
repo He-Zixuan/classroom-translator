@@ -1,0 +1,49 @@
+<!-- Copyright (c) 2026 He-Zixuan. LicenseRef-Classroom-Personal-NonCommercial-1.0; see LICENSE. -->
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>课堂翻译</title><link rel="stylesheet" href="/assets/style.css?v=20261006-listsync1"></head>
+<body>
+<nav class="library" aria-label="课堂记录">
+  <div class="library-brand"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 5h6a3 3 0 0 1 3 3v13a4 4 0 0 0-4-3H4zM13 8a3 3 0 0 1 3-3h4v13h-3a4 4 0 0 0-4 3"/></svg></span><strong>课堂翻译</strong></div>
+  <button id="home" class="home-button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7v10H3zM9 20v-7h6v7"/></svg><span>课堂空间</span></button>
+  <div class="library-heading"><button id="recordsToggle" class="records-toggle" aria-expanded="false" aria-controls="libraryContent">课堂记录<svg viewBox="0 0 20 20" aria-hidden="true"><path d="m5 7.5 5 5 5-5"/></svg></button><button id="newSession" class="icon-button new-session" aria-label="新建课堂并开始录音" title="新建课堂并开始录音" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button></div>
+  <div id="libraryContent" class="library-content"><div id="sessionList" class="session-list" aria-label="已保存课堂"></div><p id="libraryEmpty" class="hint">还没有课堂记录，点击＋开始。</p><button id="retryList" class="list-retry" hidden>重新加载课堂记录</button><p id="libraryStatus" class="hint" role="status"></p></div>
+  <div class="library-footer"><span class="local-dot" aria-hidden="true"></span><span>本地运行 · 录音与字幕自动保存</span></div>
+</nav>
+<div class="app-shell">
+  <header class="app-header">
+    <div class="identity"><div class="breadcrumb">课堂记录 <svg viewBox="0 0 20 20" aria-hidden="true"><path d="m8 5 5 5-5 5"/></svg><span id="viewKind">课堂空间</span></div>
+      <div id="titleDisplay" class="title-line"><h1 id="lessonName">新的课堂，从这里开始</h1><button id="rename" class="icon-button" aria-label="修改课堂名称" title="修改课堂名称" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 4 5 5M4 20l5-1L20 8a2 2 0 0 0-5-5L4 14z"/></svg></button></div>
+      <form id="renameForm" class="rename-form" hidden><label class="sr-only" for="renameInput">课堂名称</label><input id="renameInput" maxlength="200" required><button id="renameSave" class="primary" type="submit">保存</button><button id="renameCancel" type="button">取消</button></form>
+      <p id="renameStatus" class="rename-status" role="status" hidden></p>
+      <p class="lesson-meta"><span id="lessonDate">英文先到，中文随后</span><span id="lessonDuration" hidden></span><span id="savedState">字幕自动保存在本机</span><span id="audioStatus" role="status">录音与字幕自动保存在本机</span></p>
+    </div>
+    <div class="header-actions"><span class="language-pair">English <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h14m-5-5 5 5-5 5"/></svg> 中文</span><button id="export" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5"/></svg><span>导出对照</span></button><button id="downloadAudio" disabled>下载录音</button><button id="deleteLesson" class="delete-lesson" disabled title="永久删除当前课堂">删除课堂</button><p id="exportStatus" role="status"></p></div>
+  </header>
+  <div class="workspace"><div class="lesson-column">
+    <section class="recording-card" aria-label="录音控制"><div class="controls"><span class="record-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="12" rx="3"/><path d="M6 10v2a6 6 0 0 0 12 0v-2M12 18v3M9 21h6"/></svg></span><span id="timer" aria-label="录音时长">00:00</span><span class="audio-status"><span id="signal">麦克风未开启</span><span class="level-meter"><meter id="level" class="sr-only" min="0" max="1" value="0" aria-label="麦克风音量"></meter><span id="levelFill" class="level-fill" aria-hidden="true"></span></span></span><button id="start" class="primary" disabled>模型加载中</button><button id="stop" disabled>结束并保存</button></div><div class="statusbar"><span class="model-status"><span id="statusDot" class="status-dot" aria-hidden="true"></span><span id="readiness" role="status">正在连接本地服务…</span></span><span id="queue"></span></div></section>
+    <main id="reader" tabindex="-1" aria-label="字幕阅读区"><div id="error" role="alert" hidden></div><div id="transcript">
+      <div class="reading-header"><h2>转写</h2><span id="sessionState" role="status">准备开始</span></div>
+      <div id="empty"><span class="empty-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 4h16v13H9l-5 4zM8 8h8M8 12h5"/></svg></span><h3 id="emptyTitle">把注意力留给课堂</h3><p id="emptyHelp">点击左侧＋，立即开始一堂新课。<br>英文实时更新，中文随后逐段配对。</p><button id="retryHistory" hidden>重试加载字幕</button></div>
+      <div id="rows" aria-label="已保存的中英字幕"></div><section id="live" hidden aria-label="正在识别的英文"><span class="caption-label">正在识别 · 英文可能修正</span><p id="liveText" lang="en"></p></section><div id="anchor"></div>
+    </div></main>
+  </div>
+  <aside aria-label="课堂设置"><button id="panelToggle" class="mobile-panel-toggle" aria-expanded="false" aria-controls="sidebarContent">课堂设置<svg viewBox="0 0 20 20" aria-hidden="true"><path d="m5 7.5 5 5 5-5"/></svg></button><div id="sidebarContent" class="sidebar-content">
+    <div class="aside-heading"><h2>课堂设置</h2><p>按你的听课习惯准备</p></div>
+    <div class="field"><label for="microphone">麦克风</label><select id="microphone"><option value="">系统默认麦克风</option></select></div>
+    <div class="field"><label for="course">课程背景</label><input id="course" placeholder="例如：大学英语、微观经济学" maxlength="200"><p class="hint">供中文翻译参考，与课堂名称分开设置。</p></div>
+    <div class="field"><label for="terms">中文翻译术语</label><textarea id="terms" rows="4" placeholder="每行一组，例如：&#10;opportunity cost 翻译成 机会成本" maxlength="2000"></textarea><p class="hint">麦克风、背景和术语在新录音时生效。</p></div>
+    <div class="display-settings"><div class="label-line"><label for="size">字幕字号</label><output id="sizeValue" for="size">25</output></div><input id="size" type="range" min="20" max="36" value="25"><label class="check"><input id="follow" type="checkbox" checked><span>跟随最新字幕</span></label></div>
+    <div class="save-note"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg><p>点击「结束并保存」后，录音与字幕会留在左侧课堂记录中。</p></div>
+    <div class="help-section"><button id="helpToggle" class="disclosure" aria-expanded="false" aria-controls="help">使用提示<svg viewBox="0 0 20 20" aria-hidden="true"><path d="m5 7.5 5 5 5-5"/></svg></button><div id="help" hidden><p class="hint">首次录音时允许麦克风。声音偏小时会自动增强；尽量坐近老师，先观察音量。</p><p class="hint">录音边收音边保存到本机，结束后可下载 WAV 文件。结束后中文继续处理，等待「中文无积压」再导出完整对照。</p></div></div>
+  </div></aside></div>
+</div>
+<dialog id="deleteDialog" class="delete-dialog" aria-labelledby="deleteHeading" aria-describedby="deleteDescription">
+  <h2 id="deleteHeading">永久删除这堂课？</h2>
+  <p id="deleteName" class="delete-name"></p>
+  <p id="deleteDescription">这堂课的英文、中文和录音文件都会从本机永久删除，无法恢复。已下载到其他位置的副本不受影响。</p>
+  <p id="deleteError" role="alert" hidden></p>
+  <div class="delete-actions"><button id="deleteCancel" autofocus>取消</button><button id="deleteConfirm" class="danger">永久删除</button></div>
+</dialog>
+<script src="/assets/motion.js?v=20261006-listsync1"></script><script src="/assets/app.js?v=20261006-listsync1"></script>
+</body></html>

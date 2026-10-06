@@ -1,0 +1,12 @@
+[
+  {
+    "filename": "large-v3-turbo.pt",
+    "sha256": "aff26ae408abcba5fbf8813c21e62b0941638c5f6eebfb145be0c9839262a19a",
+    "bytes": 1617941637
+  },
+  {
+    "filename": "HY-MT1.5-1.8B-Q4_K_M.gguf",
+    "sha256": "4383ac0c3c8e476de98ff979c2a3f069f8c4fb385e7860cf2d28da896cc477c7",
+    "bytes": 1133080512
+  }
+]

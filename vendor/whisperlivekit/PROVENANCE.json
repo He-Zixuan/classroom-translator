@@ -1,0 +1,42 @@
+{
+  "upstream": "https://github.com/QuentinFuxa/WhisperLiveKit",
+  "baseline_commit": "363e4f6d029694d9c81ae548beddd9d3c88a3637",
+  "snapshot_version": "0.2.26",
+  "modified_files": [
+    "whisperlivekit/__init__.py",
+    "whisperlivekit/audio_processor.py",
+    "whisperlivekit/basic_server.py",
+    "whisperlivekit/benchmark/compat.py",
+    "whisperlivekit/benchmark/datasets.py",
+    "whisperlivekit/benchmark/metrics.py",
+    "whisperlivekit/benchmark/report.py",
+    "whisperlivekit/benchmark/runner.py",
+    "whisperlivekit/cli.py",
+    "whisperlivekit/config.py",
+    "whisperlivekit/core.py",
+    "whisperlivekit/deepgram_compat.py",
+    "whisperlivekit/diff_protocol.py",
+    "whisperlivekit/ffmpeg_manager.py",
+    "whisperlivekit/local_agreement/backends.py",
+    "whisperlivekit/local_agreement/online_asr.py",
+    "whisperlivekit/metrics_collector.py",
+    "whisperlivekit/parse_args.py",
+    "whisperlivekit/session_asr_proxy.py",
+    "whisperlivekit/simul_whisper/backend.py",
+    "whisperlivekit/test_client.py",
+    "whisperlivekit/test_harness.py",
+    "whisperlivekit/timed_objects.py",
+    "whisperlivekit/translation.py",
+    "whisperlivekit/translation_alignatt.py",
+    "whisperlivekit/web/live_transcription.js",
+    "whisperlivekit/whisper/__init__.py"
+  ],
+  "added_files": [],
+  "license": "Apache-2.0; nested third-party code retains its original terms",
+  "excluded_files": [
+    "whisperlivekit/whisper/val.py (unrelated training example)"
+  ],
+  "packaging_changes": [
+    "Removed tool.uv.sources references to unbundled optional submodules; pip installation of the classroom backend remains supported."
+  ]
+}

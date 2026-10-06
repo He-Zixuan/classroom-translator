@@ -1,0 +1,44 @@
+# Personal data and secrets: never publish.
+history/
+runtime/
+models/
+recordings/
+exports/
+.env
+.env.*
+*.key
+*.pem
+*.sqlite
+*.sqlite3
+*.sqlite3-*
+*.db
+*.db-*
+*.log
+*.wav
+*.mp3
+*.m4a
+*.mp4
+*.flac
+*.ogg
+*.gguf
+*.pt
+*.safetensors
+*.bin
+
+# Installed runtimes and build artifacts.
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+*.egg-info/
+build/
+dist/
+.coverage
+htmlcov/
+node_modules/
+.DS_Store
+Thumbs.db
+
+# Vendored Silero VAD assets and Whisper tokenizers are intentional upstream
+# package resources, not user audio or downloaded large ASR/MT models.

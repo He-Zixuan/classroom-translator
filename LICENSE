@@ -1,0 +1,64 @@
+Classroom Translator Personal Non-Commercial License 1.0
+
+Copyright (c) 2026 He-Zixuan
+
+1. Scope
+This license applies to the original Classroom Translator application code,
+frontend, application tests, scripts and documentation in this repository,
+except files expressly identified as third-party material in
+THIRD_PARTY_NOTICES.md. Third-party material, including vendor/whisperlivekit,
+retains its own license. This license neither restricts nor replaces rights
+granted by those independent third-party licenses.
+
+2. Personal use and modification
+The copyright holder grants individuals a worldwide, royalty-free,
+non-exclusive license to download, run, study, copy and modify the covered
+material for their own personal, non-commercial purposes, including personal
+learning and attendance at classes. Organizational deployments or use on
+behalf of an employer, business or other organization are not granted by this
+license and require separate written permission from the copyright holder.
+
+3. Free redistribution and attribution
+You may share unmodified or modified copies without charge, solely for the
+personal, non-commercial purposes permitted above. You must retain this
+license, the copyright notice, the project name, a link to the original
+repository (https://github.com/He-Zixuan/classroom-translator), and all
+applicable third-party license and attribution notices. Modified copies must
+clearly identify their changes and must not imply endorsement by the original
+author. The covered material and modifications to it must remain under these
+same terms; you may not relicense them to permit commercial use.
+
+4. No commercial use
+Commercial use of the covered material is prohibited without separate written
+permission. This includes selling or licensing copies; charging for access,
+hosting, translations or other services that use the material; incorporating
+it into commercial products, paid courses or paid consulting services; use
+in business operations; and advertising-supported or sponsored monetization
+of a product or service using the material. Free access does not make a
+commercial product or service non-commercial. An individual's use while
+attending an otherwise paid class is permitted if they do not provide the
+software or its services commercially.
+
+5. Independent material and user data
+No ownership is claimed over independent third-party components, model
+weights, or user-created recordings and transcripts. Their respective owners
+and applicable licenses determine the rights to those materials. This license
+does not grant trademark rights or permission to claim affiliation with any
+third-party provider.
+
+6. Termination
+Permission under this license terminates upon violation of its terms. No
+rights beyond those expressly granted are provided. Separate commercial
+permission, if any, must be obtained from the copyright holder; none is
+promised by this license.
+
+7. Disclaimer
+THE COVERED MATERIAL IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING MERCHANTABILITY, FITNESS FOR A PARTICULAR
+PURPOSE AND NON-INFRINGEMENT. TO THE EXTENT PERMITTED BY APPLICABLE LAW,
+THE COPYRIGHT HOLDER IS NOT LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY
+ARISING FROM THE MATERIAL OR ITS USE.
+
+This is a source-available, personal non-commercial license, not an
+OSI-approved open-source license. This English text is the governing license;
+the Chinese explanation in docs/LICENSE.zh-CN.md is a convenience summary.
